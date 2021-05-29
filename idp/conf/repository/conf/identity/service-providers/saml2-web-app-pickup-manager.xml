@@ -1,0 +1,37 @@
+<ServiceProvider>
+  <ApplicationID>4</ApplicationID>
+  <ApplicationName>saml2-web-app-pickup-manager.com</ApplicationName>
+  <Description></Description>
+  <IsSaaSApp>true</IsSaaSApp>
+  <InboundAuthenticationConfig>
+    <InboundAuthenticationRequestConfigs>
+      <InboundAuthenticationRequestConfig>
+        <InboundAuthKey>saml2-web-app-pickup-manager.com</InboundAuthKey>
+        <InboundAuthType>samlsso</InboundAuthType>
+        <Properties></Properties>
+      </InboundAuthenticationRequestConfig>
+    </InboundAuthenticationRequestConfigs>
+  </InboundAuthenticationConfig>
+
+  <LocalAndOutBoundAuthenticationConfig>
+    <AuthenticationSteps>
+      <AuthenticationStep>
+        <StepOrder>1</StepOrder>
+        <LocalAuthenticatorConfigs>
+          <LocalAuthenticatorConfig>
+            <Name>BasicAuthenticator</Name>
+            <DisplayName>basicauth</DisplayName>
+            <IsEnabled>true</IsEnabled>
+          </LocalAuthenticatorConfig>
+        </LocalAuthenticatorConfigs>>
+        <SubjectStep>false</SubjectStep>
+        <AttributeStep>false</AttributeStep>
+      </AuthenticationStep>
+    </AuthenticationSteps>
+  </LocalAndOutBoundAuthenticationConfig>
+  <RequestPathAuthenticatorConfigs></RequestPathAuthenticatorConfigs>
+  <InboundProvisioningConfig></InboundProvisioningConfig>
+  <OutboundProvisioningConfig></OutboundProvisioningConfig>
+  <ClaimConfig></ClaimConfig>
+  <PermissionAndRoleConfig></PermissionAndRoleConfig>
+</ServiceProvider>

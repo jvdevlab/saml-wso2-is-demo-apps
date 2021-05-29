@@ -1,0 +1,36 @@
+version: "3"
+services:
+  # https://localhost:9443/carbon
+  # https://is.docs.wso2.com/en/5.10.0/learn/configuring-single-sign-on-saml/
+  idp:
+    build: ./idp
+    ports:
+      - 9443:9443
+    volumes:
+      - ${pwd:-.}/logs/is:/home/wso2carbon/wso2is-5.10.0/repository/logs
+
+  # http://localhost:9051/saml2-web-app-pickup-dispatch.com
+  # https://is.docs.wso2.com/en/5.10.0/learn/deploying-the-sample-app/#deploying-the-saml2-web-app-pickup-dispatch-webapp
+  dispatch-app:
+    build:
+      context: ./sp
+      args:
+        WAR_NAME: saml2-web-app-pickup-dispatch.com.war
+        CONFIG_DIR: dispatch-app
+    ports:
+      - 9051:8080
+    volumes:
+      - ${pwd:-.}/logs/dispatch-app:/usr/local/tomcat/logs
+
+  # http://localhost:9052/saml2-web-app-pickup-manager.com
+  # https://is.docs.wso2.com/en/5.10.0/learn/deploying-the-sample-app/#deploying-the-saml2-web-app-pickup-manager-webapp
+  manager-app:
+    build:
+      context: ./sp
+      args:
+        WAR_NAME: saml2-web-app-pickup-manager.com.war
+        CONFIG_DIR: manager-app
+    ports:
+      - 9052:8080
+    volumes:
+      - ${pwd:-.}/logs/manager-app:/usr/local/tomcat/logs
