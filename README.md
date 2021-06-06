@@ -25,7 +25,7 @@ docker compose up
 - Verify SSO setup by opening the Manager app in the same browser. <http://localhost:9052/saml2-web-app-pickup-manager.com> You should _not_ be asked to log in again. Signing in to the Manger app first and then navigating to the Dispatch app will have a similar effect.
 - You can use [SAML-tracer](https://chrome.google.com/webstore/detail/saml-tracer/mpdajninpobndbfcldcmbpnnbhibjmch?hl=en) Chrome extension or similar tool to inspect SAML assertions.
 
-![](https://jvdevlab.com/img/img/saml-wso2-is-demo-apps/06.PNG)
+![](https://jvdevlab.com/img/saml-wso2-is-demo-apps/06.PNG)
 
 ## Cleanup
 
